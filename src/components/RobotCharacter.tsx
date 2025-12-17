@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import './RobotCharacter.css'
 
 export default function RobotCharacter() {

@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Music, Disc3, ExternalLink } from 'lucide-react'
 import { useNowPlaying } from '@/hooks/useNowPlaying'
 

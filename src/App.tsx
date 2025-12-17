@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { RouterProvider, createRouter, createRootRoute, createRoute, Outlet, Link, useLocation } from '@tanstack/react-router'
+import { RouterProvider, createRouter, createRootRoute, createRoute, Outlet, useLocation } from '@tanstack/react-router'
 import { AnimatePresence, motion } from 'framer-motion'
 
 // Pages

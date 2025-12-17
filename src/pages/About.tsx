@@ -71,7 +71,7 @@ const socialLinks = [
 ]
 
 export default function About() {
-  const { totalStars, totalForks, totalRepos } = useGitHubTotalStats()
+  const {totalStars, totalRepos } = useGitHubTotalStats()
 
   return (
     <div className="min-h-screen pt-32 pb-20">
@@ -159,13 +159,13 @@ export default function About() {
 
               {/* Stats */}
               <div className="grid grid-cols-2 gap-4 mb-6">
+                 <div className="text-center p-4 rounded-xl bg-white/5">
+                    <p className="font-orbitron text-2xl font-bold text-cyan">{totalRepos || 10}+</p>
+                    <p className="text-white/50 text-xs">Projects</p>
+                 </div>
                 <div className="text-center p-4 rounded-xl bg-white/5">
-                  <p className="font-orbitron text-2xl font-bold text-cyan">10+</p>
-                  <p className="text-white/50 text-xs">Projects</p>
-                </div>
-                <div className="text-center p-4 rounded-xl bg-white/5">
-                  <p className="font-orbitron text-2xl font-bold text-purple">4</p>
-                  <p className="text-white/50 text-xs">Research</p>
+                   <p className="font-orbitron text-2xl font-bold text-purple">{totalStars || 4}</p>
+                   <p className="text-white/50 text-xs">Stars</p>
                 </div>
               </div>
 

@@ -75,7 +75,7 @@ function Particles() {
 function FloatingShapes() {
   const shapesRef = useRef<THREE.Group>(null)
   const shapes = useMemo(() => {
-    return Array.from({ length: 10 }, (_, i) => ({
+    return Array.from({ length: 10 }, (_, _i) => ({
       position: [
         (Math.random() - 0.5) * 100,
         (Math.random() - 0.5) * 60,
