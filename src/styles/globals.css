@@ -1,0 +1,283 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cyan: #00f5ff;
+  --purple: #a855f7;
+  --pink: #ec4899;
+  --blue: #3b82f6;
+  --dark: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background: var(--dark);
+  color: #fff;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--cyan), var(--purple));
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--cyan);
+  color: #000;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--cyan), var(--purple), var(--pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glassmorphism */
+.glass {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-cyan {
+  background: linear-gradient(145deg, rgba(0, 245, 255, 0.1), rgba(168, 85, 247, 0.1));
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(0, 245, 255, 0.3);
+}
+
+/* Button Styles */
+.btn-primary {
+  @apply inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold transition-all duration-300;
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  color: #000;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.btn-primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 245, 255, 0.3);
+}
+
+.btn-secondary {
+  @apply inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold transition-all duration-300;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--cyan);
+  transform: translateY(-5px);
+}
+
+/* Card Flip Animation */
+.perspective-1500 {
+  perspective: 1500px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Skill Bar Animation */
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+}
+
+.skill-bar-fill {
+  animation: fillBar 1.5s ease forwards;
+}
+
+/* Page Transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Timeline */
+.timeline-line {
+  background: linear-gradient(180deg, var(--cyan), var(--purple), var(--pink));
+}
+
+/* Glow Effects */
+.glow-cyan {
+  box-shadow: 0 0 20px var(--cyan), 0 0 40px var(--cyan);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px var(--purple), 0 0 40px var(--purple);
+}
+
+/* Tag Styles */
+.tag {
+  @apply px-3 py-1 rounded-full text-xs;
+  background: rgba(0, 245, 255, 0.1);
+  border: 1px solid rgba(0, 245, 255, 0.3);
+  color: var(--cyan);
+}
+
+/* Form Styles */
+.input-glass {
+  @apply w-full px-6 py-4 rounded-2xl outline-none transition-all duration-300;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.input-glass:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.2);
+}
+
+.input-glass::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Intro Animation */
+@keyframes introReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: introReveal 0.6s ease forwards;
+}
+
+@keyframes loadBar {
+  to {
+    width: 100%;
+  }
+}
+
+.loader-bar {
+  animation: loadBar 2s ease forwards;
+}
+
+/* Profile Float Animation */
+@keyframes profileFloat {
+  0%, 100% {
+    transform: rotateY(-5deg) rotateX(5deg);
+  }
+  50% {
+    transform: rotateY(5deg) rotateX(-5deg);
+  }
+}
+
+.profile-float {
+  animation: profileFloat 6s ease-in-out infinite;
+}
+
+/* Rotating Gradient */
+@keyframes rotateGradient {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-gradient {
+  animation: rotateGradient 10s linear infinite;
+}
+
+/* Glow Rotate Animation for Cards */
+@keyframes glowRotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Card 3D flip helpers */
+.card-3d {
+  perspective: 2000px;
+}
+
+.card-3d:hover {
+  z-index: 100;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Pulse glow */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px var(--cyan), 0 0 40px var(--cyan); }
+  50% { box-shadow: 0 0 40px var(--purple), 0 0 80px var(--purple); }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
