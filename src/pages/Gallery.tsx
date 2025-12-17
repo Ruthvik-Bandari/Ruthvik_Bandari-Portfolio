@@ -44,7 +44,7 @@ export default function Gallery() {
           className="text-center"
         >
           <h1 className="font-orbitron text-4xl md:text-5xl font-black mb-4">
-            Photo <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">Gallery</span>
+            Photo <span className="gradient-text">Gallery</span>
           </h1>
           <p className="text-white/60 font-space">
             Moments captured through my lens
@@ -119,12 +119,9 @@ export default function Gallery() {
         </motion.div>
       </section>
 
-      {/* Gallery Grid */}
+      {/* Masonry Gallery Grid */}
       <section className="px-8 md:px-20">
-        <motion.div
-          layout
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto"
-        >
+        <div className="max-w-7xl mx-auto columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
           <AnimatePresence mode="popLayout">
             {filteredPhotos.map((photo, index) => (
               <motion.div
@@ -135,31 +132,25 @@ export default function Gallery() {
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ delay: index * 0.05 }}
                 onClick={() => openLightbox(photo.id)}
-                className="aspect-square rounded-2xl overflow-hidden cursor-pointer
-                           glass hover:border-pink-500/50 transition-all group relative
-                           bg-gradient-to-br from-pink-500/10 to-purple-500/10"
+                className="break-inside-avoid mb-4 rounded-2xl overflow-hidden cursor-pointer
+                           glass hover:border-pink-500/50 transition-all group relative"
               >
                 <img
-                  src={photo.thumbnail}
+                  src={photo.url}
                   alt={photo.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
-                  onError={(e) => {
-                    // Hide broken image and show fallback
-                    e.currentTarget.style.display = 'none'
-                  }}
                 />
-                {/* Overlay - always show title for better UX */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent
-                                flex items-end justify-start p-4">
-                  <span className="text-white text-sm font-space opacity-80 group-hover:opacity-100 transition-opacity">
-                    {photo.title}
-                  </span>
+                {/* Overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent
+                                opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                                flex items-end p-4">
+                  <span className="text-white text-sm font-space">{photo.title}</span>
                 </div>
               </motion.div>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
       </section>
 
       {/* Lightbox */}

@@ -1,10 +1,9 @@
 export interface Photo {
   id: string
   url: string
-  thumbnail: string
   title: string
-  category: 'landscape' | 'street' | 'nature' | 'portrait'
-  vscoLink?: string
+  category: 'landscape' | 'street' | 'nature' | 'portrait' | 'architecture'
+  orientation: 'landscape' | 'portrait'
 }
 
 export const vscoProfile = {
@@ -15,73 +14,73 @@ export const vscoProfile = {
 export const photos: Photo[] = [
   {
     id: '1',
-    url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80',
-    thumbnail: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=400&q=80',
-    title: 'Mountain Peaks',
-    category: 'landscape',
+    url: '/images/gallery/night-reflections.jpg',
+    title: 'Night Reflections',
+    category: 'street',
+    orientation: 'landscape',
   },
   {
     id: '2',
-    url: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=800&q=80',
-    thumbnail: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=400&q=80',
-    title: 'Urban Nights',
-    category: 'street',
+    url: '/images/gallery/boston-architectural.jpg',
+    title: 'Boston Architectural College',
+    category: 'architecture',
+    orientation: 'portrait',
   },
   {
     id: '3',
-    url: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80',
-    thumbnail: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=400&q=80',
-    title: 'Forest Light',
-    category: 'nature',
+    url: '/images/gallery/golden-lights.jpg',
+    title: 'Golden Lights',
+    category: 'street',
+    orientation: 'portrait',
   },
   {
     id: '4',
-    url: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80',
-    thumbnail: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80',
-    title: 'Natural Light',
-    category: 'portrait',
+    url: '/images/gallery/holiday-glow.jpg',
+    title: 'Holiday Glow',
+    category: 'street',
+    orientation: 'portrait',
   },
   {
     id: '5',
-    url: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80',
-    thumbnail: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=400&q=80',
-    title: 'Valley View',
-    category: 'landscape',
+    url: '/images/gallery/gothic-spire.jpg',
+    title: 'Gothic Spire',
+    category: 'architecture',
+    orientation: 'portrait',
   },
   {
     id: '6',
-    url: 'https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=800&q=80',
-    thumbnail: 'https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=400&q=80',
-    title: 'City Life',
-    category: 'street',
+    url: '/images/gallery/harbor-nights.jpg',
+    title: 'Harbor Nights',
+    category: 'landscape',
+    orientation: 'landscape',
   },
   {
     id: '7',
-    url: 'https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=800&q=80',
-    thumbnail: 'https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=400&q=80',
-    title: 'Ocean Waves',
+    url: '/images/gallery/aurora-dreams.jpg',
+    title: 'Aurora Dreams',
     category: 'nature',
+    orientation: 'portrait',
   },
   {
     id: '8',
-    url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
-    thumbnail: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
-    title: 'Character Study',
-    category: 'portrait',
+    url: '/images/gallery/northern-lights.jpg',
+    title: 'Northern Lights',
+    category: 'nature',
+    orientation: 'landscape',
   },
   {
     id: '9',
-    url: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80',
-    thumbnail: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=400&q=80',
-    title: 'Still Waters',
+    url: '/images/gallery/dusk-silhouettes.jpg',
+    title: 'Dusk Silhouettes',
     category: 'landscape',
+    orientation: 'landscape',
   },
 ]
 
 export const galleryCategories = [
   { id: 'all', label: 'All' },
   { id: 'landscape', label: 'Landscape' },
-  { id: 'portrait', label: 'Portrait' },
+  { id: 'architecture', label: 'Architecture' },
   { id: 'street', label: 'Street' },
   { id: 'nature', label: 'Nature' },
 ]
