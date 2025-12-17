@@ -3,7 +3,7 @@
 A modern, interactive portfolio built with React, TypeScript, and Three.js featuring glassmorphic design, 3D particle animations, and seamless API integrations.
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-cyan?style=for-the-badge&logo=vercel)](https://ruthvik-bandari-portfolio-sufd.vercel.app/)
-[![GitHub stars](https://img.shields.io/github/stars/Ruthvik-Bandari/portfolio?style=for-the-badge&logo=github)](https://github.com/Ruthvik-Bandari/portfolio/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/Ruthvik-Bandari/Ruthvik_Bandari-Portfolio?style=for-the-badge&logo=github)](https://github.com/Ruthvik-Bandari/Ruthvik_Bandari-Portfolio/stargazers)
 [![License](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)](LICENSE)
 
 ---
@@ -58,7 +58,7 @@ If you find this portfolio useful, inspiring, or want to use it as a template fo
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/Ruthvik-Bandari/portfolio.git
+   git clone https://github.com/Ruthvik-Bandari/Ruthvik_Bandari-Portfolio.git
    cd portfolio
    ```
 
@@ -162,7 +162,7 @@ portfolio/
 4. Add environment variables
 5. Deploy!
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Ruthvik-Bandari/portfolio)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Ruthvik-Bandari/Ruthvik_Bandari-Portfolio)
 
 ---
 
