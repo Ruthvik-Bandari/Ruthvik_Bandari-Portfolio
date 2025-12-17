@@ -1,211 +1,264 @@
-# 🚀 Ruthvik's Portfolio - React + Bun + TanStack
+# 🚀 Ruthvik's Portfolio
 
-A modern, high-performance portfolio built with React, TypeScript, TanStack Router & Query, Three.js, and Tailwind CSS.
+A modern, interactive portfolio built with React, TypeScript, and Three.js featuring glassmorphic design, 3D particle animations, and seamless API integrations.
 
-![Portfolio Preview](./preview.png)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-cyan?style=for-the-badge&logo=vercel)](https://ruthvik-bandari-portfolio-sufd.vercel.app/)
+[![GitHub stars](https://img.shields.io/github/stars/Ruthvik-Bandari/portfolio?style=for-the-badge&logo=github)](https://github.com/Ruthvik-Bandari/portfolio/stargazers)
+[![License](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)](LICENSE)
+
+---
+
+## ⭐ Like this project? Give it a star!
+
+If you find this portfolio useful, inspiring, or want to use it as a template for your own — **please consider giving it a star!** It helps others discover the project and motivates me to keep building.
+
+---
 
 ## ✨ Features
 
-- **⚡ Blazing Fast** - Powered by Vite + Bun for instant HMR and builds
-- **🎨 Stunning 3D Graphics** - Three.js particle system and floating shapes
-- **📊 Live GitHub Stats** - Real-time repository stars, forks, and activity
-- **🎵 Apple Music Now Playing** - Show what you're listening to via Last.fm
-- **📝 Hashnode Blog** - Auto-fetch and display your blog posts
-- **📧 Contact Form** - Working form with Formspree integration
-- **🔄 Smooth Animations** - Framer Motion page transitions and interactions
-- **📱 Fully Responsive** - Beautiful on all devices
-- **🎯 Type-Safe Routing** - TanStack Router with full TypeScript support
-- **💾 Smart Caching** - TanStack Query for efficient data fetching
-- **🌙 Glassmorphism Design** - Modern frosted glass UI components
+- 🌌 **3D Particle Background** — Interactive Three.js animation
+- 🎨 **Glassmorphic Design** — Modern frosted glass UI effects
+- ✨ **Smooth Animations** — Page transitions with Framer Motion
+- 📱 **Fully Responsive** — Works on all devices
+- 🎵 **Now Playing Widget** — Real-time Apple Music integration via Last.fm
+- 📊 **Live GitHub Stats** — Auto-fetched stars and forks on project cards
+- 📝 **Blog Integration** — Auto-fetching posts from Hashnode
+- 📸 **Masonry Gallery** — VSCO-style photo gallery
+- 📬 **Contact Form** — Working form with Formspree
+- 📈 **Analytics** — Google Analytics integration
+- 🤖 **Animated Robot** — Custom CSS character on homepage
+- ⚡ **Fast Performance** — Optimized with Vite
+
+---
 
 ## 🛠️ Tech Stack
 
 | Category | Technologies |
 |----------|-------------|
-| **Framework** | React 18, TypeScript |
-| **Build Tool** | Vite, Bun |
+| **Frontend** | React 18, TypeScript, Vite |
+| **Styling** | Tailwind CSS, Custom CSS |
+| **3D Graphics** | Three.js |
+| **Animations** | Framer Motion |
 | **Routing** | TanStack Router |
 | **Data Fetching** | TanStack Query |
-| **3D Graphics** | Three.js, React Three Fiber |
-| **Animations** | Framer Motion |
-| **Styling** | Tailwind CSS |
-| **Icons** | Lucide React |
+| **APIs** | GitHub, Hashnode GraphQL, Last.fm, Formspree |
 | **Deployment** | Vercel |
+| **Analytics** | Google Analytics 4 |
+
+---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- [Bun](https://bun.sh/) (recommended) or Node.js 18+
+
+- Node.js 18+
+- npm or yarn
 
 ### Installation
 
-```bash
-# Clone the repository
-git clone https://github.com/Ruthvik-Bandari/portfolio-react.git
-cd portfolio-react
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/Ruthvik-Bandari/portfolio.git
+   cd portfolio
+   ```
 
-# Install dependencies with Bun (recommended)
-bun install
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-# Or with npm
-npm install
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   ```
 
-# Copy environment variables
-cp .env.example .env
+4. **Configure your `.env` file**
+   ```env
+   # GitHub (optional - for higher rate limits)
+   VITE_GITHUB_TOKEN=your_github_token
 
-# Start development server
-bun dev
-# or
-npm run dev
-```
+   # Contact Form
+   VITE_FORMSPREE_ID=your_formspree_id
 
-Open [http://localhost:5173](http://localhost:5173) to view it.
+   # Blog
+   VITE_HASHNODE_HOST=yourblog.hashnode.dev
 
-### Building for Production
+   # Apple Music / Last.fm
+   VITE_LASTFM_API_KEY=your_lastfm_api_key
+   VITE_LASTFM_USERNAME=your_lastfm_username
 
-```bash
-# Build with Bun
-bun run build
+   # Analytics (optional)
+   VITE_GA_TRACKING_ID=G-XXXXXXXXXX
+   ```
 
-# Or with npm
-npm run build
+5. **Run development server**
+   ```bash
+   npm run dev
+   ```
 
-# Preview production build
-bun preview
-```
+6. **Open** [http://localhost:5173](http://localhost:5173)
+
+---
 
 ## 🔧 Configuration
 
-### 1. Formspree Contact Form Setup
+### GitHub Integration
 
-1. Go to [formspree.io](https://formspree.io) and create an account
-2. Create a new form
-3. Copy your form ID (looks like `xabcdefg`)
-4. Add to `.env`:
-   ```env
-   VITE_FORMSPREE_ID=xabcdefg
-   ```
+Update your GitHub username in `src/hooks/useGitHub.ts`:
+```typescript
+const GITHUB_USERNAME = 'your-username'
+```
 
-### 2. Hashnode Blog Setup
+### Projects
 
-1. Create a blog on [hashnode.dev](https://hashnode.dev)
-2. Your blog URL will be `yourname.hashnode.dev`
-3. Add to `.env`:
-   ```env
-   VITE_HASHNODE_HOST=yourname.hashnode.dev
-   ```
+Edit your projects in `src/data/projects.ts`
 
-### 3. Apple Music Now Playing (via Last.fm)
+### Gallery Photos
 
-1. Create a [Last.fm](https://last.fm) account
-2. Connect Apple Music:
-   - On iPhone: Settings → Music → Connect to Last.fm
-   - On Mac: Use [Cider](https://cider.sh) or [Scrobbles for Last.fm](https://apps.apple.com/app/scrobbles-for-last-fm/id1344679160)
-3. Get API key from [last.fm/api/account/create](https://www.last.fm/api/account/create)
-4. Add to `.env`:
-   ```env
-   VITE_LASTFM_API_KEY=your_api_key_here
-   ```
-5. Update your username in `src/hooks/useNowPlaying.ts`:
-   ```typescript
-   const LASTFM_USERNAME = 'your_lastfm_username'
-   ```
+Add your photos to `public/images/gallery/` and update `src/data/photos.ts`
 
-### 4. GitHub Stats (Optional - Higher Rate Limits)
+### Personal Info
 
-1. Create a [GitHub Personal Access Token](https://github.com/settings/tokens)
-2. Add to `.env`:
-   ```env
-   VITE_GITHUB_TOKEN=ghp_xxxxxxxxxxxx
-   ```
+Update your details in:
+- `src/pages/Home.tsx` — Hero section
+- `src/pages/About.tsx` — About content
+- `src/pages/Contact.tsx` — Contact info
+- `src/components/Footer.tsx` — Social links
+
+---
 
 ## 📁 Project Structure
 
 ```
-portfolio-react/
+portfolio/
 ├── public/
+│   ├── images/
+│   │   ├── gallery/        # Gallery photos
+│   │   └── profile.png     # Profile picture
 │   └── favicon.svg
 ├── src/
-│   ├── components/       # Reusable UI components
-│   │   ├── BlogCard.tsx
-│   │   ├── CustomCursor.tsx
-│   │   ├── FlipCard.tsx
-│   │   ├── Footer.tsx
-│   │   ├── IntroAnimation.tsx
-│   │   ├── Navbar.tsx
-│   │   ├── NowPlaying.tsx
-│   │   └── ProjectCard.tsx
-│   ├── pages/            # Route pages
-│   │   ├── About.tsx
-│   │   ├── Blog.tsx
-│   │   ├── Contact.tsx
-│   │   ├── Gallery.tsx
-│   │   ├── Home.tsx
-│   │   └── Projects.tsx
-│   ├── hooks/            # Custom React hooks
-│   │   ├── useBlog.ts       # Hashnode integration
-│   │   ├── useGitHub.ts     # GitHub API integration
-│   │   └── useNowPlaying.ts # Last.fm/Apple Music
-│   ├── data/             # Static data
-│   │   └── projects.ts   # Projects configuration
-│   ├── three/            # Three.js components
-│   │   └── ThreeBackground.tsx
-│   ├── styles/           # Global styles
-│   │   └── globals.css
-│   ├── utils/            # Utility functions
-│   │   └── helpers.ts
-│   ├── App.tsx           # Main app with router
-│   └── main.tsx          # Entry point
-├── index.html
-├── package.json
+│   ├── components/         # Reusable components
+│   ├── pages/              # Page components
+│   ├── hooks/              # Custom hooks (GitHub, Blog, etc.)
+│   ├── data/               # Static data (projects, photos)
+│   ├── three/              # Three.js background
+│   ├── styles/             # Global styles
+│   └── App.tsx             # Main app with routing
+├── .env.example
 ├── tailwind.config.js
-├── tsconfig.json
-└── vite.config.ts
+├── vite.config.ts
+└── package.json
 ```
-
-## 🚀 Deployment
-
-### Vercel (Recommended)
-
-1. Push to GitHub
-2. Import project in [Vercel](https://vercel.com)
-3. Add environment variables in Vercel dashboard:
-   - `VITE_FORMSPREE_ID`
-   - `VITE_HASHNODE_HOST`
-   - `VITE_LASTFM_API_KEY`
-4. Deploy!
-
-### Other Platforms
-
-- **Netlify**: Works out of the box, add env vars in dashboard
-- **Cloudflare Pages**: Set build command and output
-- **GitHub Pages**: Use `gh-pages` branch
-
-## 📊 Live Features
-
-| Feature | Refresh Rate | Source |
-|---------|-------------|--------|
-| GitHub Stats | 5 minutes | GitHub API |
-| Now Playing | 30 seconds | Last.fm API |
-| Blog Posts | 10 minutes | Hashnode GraphQL |
-
-## 🎨 Customization Tips
-
-1. **Profile Photo**: Add your image to `public/images/` and update About.tsx
-2. **Gallery Images**: Add local images or connect to VSCO/Instagram API
-3. **Colors**: Edit `tailwind.config.js` and `src/styles/globals.css`
-4. **Projects**: Edit `src/data/projects.ts`
-
-## 📝 License
-
-MIT License - feel free to use this for your own portfolio!
-
-## 🙏 Credits
-
-- Design & Development: Bandari Ruthvik Nath
-- 3D Inspiration: Various Three.js examples
-- Icons: Lucide React
 
 ---
 
-Built with ❤️ and lots of ☕
+## 🌐 Deployment
+
+### Deploy to Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com)
+3. Import your repository
+4. Add environment variables
+5. Deploy!
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Ruthvik-Bandari/portfolio)
+
+---
+
+## 🔌 API Setup Guides
+
+<details>
+<summary><b>GitHub Token (Optional)</b></summary>
+
+1. Go to [GitHub Settings → Tokens](https://github.com/settings/tokens)
+2. Generate new token (classic)
+3. Select `public_repo` scope
+4. Add to `.env` as `VITE_GITHUB_TOKEN`
+
+</details>
+
+<details>
+<summary><b>Formspree (Contact Form)</b></summary>
+
+1. Sign up at [formspree.io](https://formspree.io)
+2. Create a new form
+3. Copy the form ID (e.g., `myzrrnvq`)
+4. Add to `.env` as `VITE_FORMSPREE_ID`
+
+</details>
+
+<details>
+<summary><b>Hashnode (Blog)</b></summary>
+
+1. Create a blog at [hashnode.com](https://hashnode.com)
+2. Your blog URL is `yourusername.hashnode.dev`
+3. Add to `.env` as `VITE_HASHNODE_HOST`
+
+</details>
+
+<details>
+<summary><b>Last.fm (Apple Music Widget)</b></summary>
+
+1. Create account at [last.fm](https://last.fm)
+2. Get API key from [last.fm/api](https://www.last.fm/api/account/create)
+3. Install a scrobbler app to connect Apple Music
+4. Add to `.env`:
+   - `VITE_LASTFM_API_KEY`
+   - `VITE_LASTFM_USERNAME`
+
+</details>
+
+<details>
+<summary><b>Google Analytics</b></summary>
+
+1. Go to [analytics.google.com](https://analytics.google.com)
+2. Create a new property
+3. Get Measurement ID (G-XXXXXXXXXX)
+4. Add to `index.html` and `.env`
+
+</details>
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+**Feel free to use this as a template for your own portfolio!** Just remember to:
+- Replace personal info with your own
+- Update projects and photos
+- Give a ⭐ if you found it helpful!
+
+---
+
+## 📬 Contact
+
+**Bandari Ruthvik Nath**
+
+- 🌐 Portfolio: [ruthvik-bandari-portfolio-sufd.vercel.app](https://ruthvik-bandari-portfolio-sufd.vercel.app/)
+- 💼 LinkedIn: [linkedin.com/in/ruthvik-nath-bandari](https://www.linkedin.com/in/ruthvik-nath-bandari-908b00247/)
+- 🐙 GitHub: [@Ruthvik-Bandari](https://github.com/Ruthvik-Bandari)
+- 📧 Email: ruthvik299@gmail.com
+
+---
+
+<div align="center">
+
+### ⭐ Star this repo if you like it!
+
+Made with ❤️ by [Ruthvik](https://github.com/Ruthvik-Bandari)
+
+</div>
