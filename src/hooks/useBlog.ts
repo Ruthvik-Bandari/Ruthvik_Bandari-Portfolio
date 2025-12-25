@@ -42,7 +42,7 @@ export interface BlogPost {
 }
 
 // Your Hashnode blog handle (the part after hashnode.dev/)
-const HASHNODE_HOST = import.meta.env.VITE_HASHNODE_HOST || 'ruthvikbandari.hashnode.dev'
+const HASHNODE_HOST = import.meta.env.VITE_HASHNODE_HOST || 'hallucination-detection-for-llms.hashnode.dev'
 
 const HASHNODE_QUERY = `
   query GetPosts($host: String!, $first: Int!) {
